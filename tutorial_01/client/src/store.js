@@ -16,3 +16,5 @@ const store = createStore(
 );
 
 export default store;
+
+// checked all okay
