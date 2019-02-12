@@ -1,0 +1,11 @@
+
+@import "@material/button/mixins";
+
+.button-alternate {
+  @include mdc-button-container-fill-color(#000080);
+  @include mdc-button-outline-width(2px);
+  @include mdc-button-ink-color(#FAD700);
+}
+.button {
+    @include mdc-button-ink-color(#FAD700);
+}

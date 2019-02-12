@@ -1,0 +1,35 @@
+@import '@material/react-button/index.scss';
+
+@import "./overrides/react-button-overrides";
+
+@import '@material/react-layout-grid/index.scss';
+
+@import '@material/react-card/index.scss';
+
+@import '@material/react-chips/index.scss';
+
+@import './overrides/colours';
+body {
+  background-color: $blue;
+
+}
+.grid {
+  background-color: #ead0d0;
+}
+
+.row {
+  background-color: 	#f5f5ff;
+}
+.rowTwo {
+  align-items: center;
+  margin-top: 50px;
+}
+.cell {
+  background-color: #f5f5ff;
+
+}
+
+.card {
+  @include mdc-card-fill-color(#FAD700);
+  @include mdc-card-outline(lightblue, .5px);
+}
