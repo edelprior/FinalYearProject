@@ -32,7 +32,7 @@ class App extends Component {
           <Cell columns= {3} >
             <Button
               unelevated
-              className='button-alternate'
+              className="button-alternate"
               onClick={() => console.log('clicked!')}>
               Unelevated Button
             </Button>
