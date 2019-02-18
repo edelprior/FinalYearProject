@@ -1,19 +1,20 @@
 import React, { Component } from "react";
 import Drawer, { DrawerAppContent } from "@material/react-drawer";
 import MaterialIcon from "@material/react-material-icon";
+import {Headline1, Headline2, Headline6 } from '@material/react-typography';
 import "./App.scss";
 
 class App extends Component {
-  state = { open: false };
+  state = { open: true };
 
   render() {
     return (
       <div>
-        <Drawer dismissible open={this.state.open}>
+        <Drawer className= "perm_drawer" dismissible open={this.state.open}>
           <div>
             {" "}
             <MaterialIcon icon="accessibility"> </MaterialIcon>
-            <h3> Web Accessibility Handbook </h3>
+            <Headline6> Web Accessibility Handbook </Headline6>
           </div>
         </Drawer>
         <DrawerAppContent>
@@ -22,11 +23,13 @@ class App extends Component {
             onClick={() => this.setState({ open: !this.state.open })}
           />
 
-          <h1> What is Accessibility Design?</h1>
+          <Headline1> What is Accessibility Design?</Headline1>
 
-          <h2> What is Universal Design?</h2>
+          <Headline2> What is Universal Design?</Headline2>
 
           <h3> What is Inclusive Design?</h3>
+
+
         </DrawerAppContent>
       </div>
     );
