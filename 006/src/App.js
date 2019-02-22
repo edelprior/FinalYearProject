@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import './App.scss';
+import './Styles/App.scss';
 
-
-
-
+import {BrowserRouter, Route, Link} from 'react-router-dom';
 import TopAppBar, {TopAppBarFixedAdjust} from '@material/react-top-app-bar';
 import Drawer, {DrawerAppContent, DrawerContent, DrawerHeader, DrawerTitle} from '@material/react-drawer';
 import MaterialIcon from '@material/react-material-icon';
 import List, {ListItem, ListItemGraphic, ListItemText} from '@material/react-list';
+
+import Start from './Pages/Start';
+import Reference from './Pages/Reference';
+import Codepen from './Pages/Codepen';
 
 
 class App extends Component {
@@ -15,6 +17,7 @@ class App extends Component {
 
     render() {
       return (
+        <BrowserRouter>
         <div className='drawer-container'>
         <Drawer
              dismissible
@@ -27,16 +30,22 @@ class App extends Component {
             </DrawerHeader>
               <List>
                 <ListItem>
+                <Link to="/">
                   <ListItemGraphic graphic={<MaterialIcon icon='home'/>} />
                   <ListItemText primaryText='Start' />
+                  </Link>
                 </ListItem>
                 <ListItem>
+                <Link to = "/reference">
                   <ListItemGraphic graphic={<MaterialIcon icon='folder'/>} />
                   <ListItemText primaryText='Reference' />
+                  </Link>
                 </ListItem>
                 <ListItem>
+                <Link to="/codepen">
                   <ListItemGraphic graphic={<MaterialIcon icon='code'/>} />
-                  <ListItemText primaryText='GitHub' />
+                  <ListItemText primaryText='Codepen' />
+                  </Link>
                 </ListItem>
               </List>
             </DrawerContent>
@@ -49,11 +58,16 @@ class App extends Component {
 
             <TopAppBarFixedAdjust>
             <div className = "dummy">
-              <h1> Content </h1>
+            <Route exact path  = '/' component={Start}/>
+            <Route path = '/reference' component={Reference}/>
+            <Route path = '/codepen' component = {Codepen}/>
+
               </div>
             </TopAppBarFixedAdjust>
           </DrawerAppContent>
         </div>
+        </BrowserRouter>
+
       );
     }
   }
