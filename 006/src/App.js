@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Styles/App.scss';
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
 import {BrowserRouter, Route, Link} from 'react-router-dom';
 import TopAppBar, {TopAppBarFixedAdjust} from '@material/react-top-app-bar';
 import Drawer, {DrawerAppContent, DrawerContent, DrawerHeader, DrawerTitle} from '@material/react-drawer';
@@ -9,11 +11,11 @@ import List, {ListItem, ListItemGraphic, ListItemText} from '@material/react-lis
 
 import Start from './Pages/Start';
 import Reference from './Pages/Reference';
-import Codepen from './Pages/Codepen';
+import CodePen from './Pages/Codepen';
 
 
 class App extends Component {
-  state = {open: false};
+  state = {open: true};
 
     render() {
       return (
@@ -30,21 +32,21 @@ class App extends Component {
             </DrawerHeader>
               <List>
                 <ListItem>
-                <Link to="/">
-                  <ListItemGraphic graphic={<MaterialIcon icon='home'/>} />
+                <Link className = "link" to="/">
+                  <ListItemGraphic className = "icon" graphic={<MaterialIcon icon='home'/>} />
                   <ListItemText primaryText='Start' />
                   </Link>
                 </ListItem>
                 <ListItem>
-                <Link to = "/reference">
-                  <ListItemGraphic graphic={<MaterialIcon icon='folder'/>} />
+                <Link className = "link" to = "/reference">
+                  <ListItemGraphic className = "icon" graphic={<MaterialIcon icon='folder'/>} />
                   <ListItemText primaryText='Reference' />
                   </Link>
                 </ListItem>
                 <ListItem>
-                <Link to="/codepen">
-                  <ListItemGraphic graphic={<MaterialIcon icon='code'/>} />
-                  <ListItemText primaryText='Codepen' />
+                <Link className = "link" to="/codepen">
+                  <ListItemGraphic className = "icon" graphic={<MaterialIcon icon='code'/>} />
+                  <ListItemText primaryText='CodePen' />
                   </Link>
                 </ListItem>
               </List>
@@ -53,14 +55,21 @@ class App extends Component {
 
           <DrawerAppContent className='drawer-app-content'>
             <TopAppBar className = "TopAppBar"
-              navigationIcon={<MaterialIcon icon='menu'onClick={() => this.setState({open: !this.state.open})} />}
+              navigationIcon={
+                <MaterialIcon icon='more_horiz'onClick={() =>
+                 this.setState({open: !this.state.open})}>
+                 {this.state.open ? <MaterialIcon icon = 'close'/>
+                                  : <MaterialIcon icon = 'menu' />
+                                }
+                                </MaterialIcon>
+            }
             />
 
             <TopAppBarFixedAdjust>
             <div className = "dummy">
             <Route exact path  = '/' component={Start}/>
             <Route path = '/reference' component={Reference}/>
-            <Route path = '/codepen' component = {Codepen}/>
+            <Route path = '/codepen' component = {CodePen}/>
 
               </div>
             </TopAppBarFixedAdjust>
