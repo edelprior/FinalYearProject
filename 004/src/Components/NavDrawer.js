@@ -5,7 +5,7 @@ import Drawer from "@material/react-drawer";
 import MaterialIcon from "@material/react-material-icon";
 import { Headline4, Subtitle1 } from "@material/react-typography";
 
-import "./App.scss";
+import "../styles/App.scss";
 
 class NavDrawer extends Component {
   state = {open: true};

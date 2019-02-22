@@ -3,7 +3,7 @@ import {Cell, Grid, Row} from '@material/react-layout-grid';
 import MaterialIcon from "@material/react-material-icon";
 import TextField from '@material-ui/core/TextField';
  import { Headline2 } from "@material/react-typography";
-import "./App.scss";
+import "../styles/App.scss";
 import NavDrawer from './NavDrawer';
 class Reference extends Component {
   state = {open: true,

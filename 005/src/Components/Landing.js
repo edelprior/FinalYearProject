@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import {Cell, Grid, Row} from '@material/react-layout-grid';
 import { Headline4, Headline2, Headline3 } from "@material/react-typography";
-import MaterialIcon from "@material/react-material-icon";
-import "./App.scss";
-import NavDrawer from "./NavDrawer";
+import "../styles/App.scss";
+
 class Landing extends Component {
-state = {open: true};
 render () {
   return (
 
@@ -13,13 +11,7 @@ render () {
     <Row>
 
     <Cell columns = {3}>
-    <NavDrawer />
     </Cell>
-
-    <MaterialIcon
-   icon="menu"
-   onClick={() => this.setState({ open: !this.state.open })}
- />
 
     <Cell className="Content" columns = {8}>
 
