@@ -7,26 +7,33 @@
 @import '@material/react-layout-grid/index.scss';
 @import '@material/react-text-field/index.scss';
 @import '@material/react-top-app-bar/index.scss';
+@import "@material/top-app-bar/mixins";
+
 .permanent_drawer {
   @include mdc-drawer-surface-fill-color($berry);
-  @include mdc-drawer-width(500px);
-margin-top: -48px;
 }
 
 .logo {
-  transform: scale(3.2);
-  margin: 25px;
+  transform: scale(2.8);
+  margin: 15px;
 }
 .link {
     text-decoration: none;
     color: white;
-    margin-left: 25px;
+
 
 }
 .home {
   background-color: $mint;
 }
+  .top-app-bar-alternate {
+    @include mdc-top-app-bar-fill-color($transparent);
+    @include mdc-top-app-bar-icon-ink-color($berry);
+  }
 
+.mdc-list list-alternate a {
+  text-decoration: none;
+}
 .search {
   @include mdc-text-field-ink-color(black);
   @include mdc-text-field-label-color($blue);
