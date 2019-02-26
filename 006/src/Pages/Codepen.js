@@ -37,7 +37,7 @@ render() {
             </Row>
       {/* - - - - - - - - - - - - - - - - - - - - - - - */}
             <Row>
-               <Cell columns = {8}>
+               <Cell columns = {10}>
 
                      <Codepen hash="xMJYRB" user="edelprior"/>
                      <Codepen hash="xMJYRB" user="edelprior"

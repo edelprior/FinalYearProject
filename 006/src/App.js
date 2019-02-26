@@ -5,9 +5,10 @@ import './Styles/App.scss';
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 // Import material.io modules for styling the application
 import TopAppBar, {TopAppBarFixedAdjust} from '@material/react-top-app-bar';
-import Drawer, {DrawerAppContent, DrawerContent, DrawerHeader, DrawerTitle} from '@material/react-drawer';
+import Drawer, {DrawerAppContent, DrawerContent, DrawerHeader} from '@material/react-drawer';
 import MaterialIcon from '@material/react-material-icon';
 import List, {ListItem, ListItemGraphic, ListItemText} from '@material/react-list';
+import { Headline6} from '@material/react-typography';
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 // Importing Components that act as 'pages' within the Router-dom
 import Start from './Pages/Start';
@@ -48,9 +49,9 @@ class App extends Component {
         >
          <DrawerContent>
            <DrawerHeader>
-             <DrawerTitle>
-              Accessibilty Design Handbook
-             </DrawerTitle>
+             <Headline6>
+              Accessibilty Design Handbook</Headline6>
+
            </DrawerHeader>
               {/* - - - - - - - - - - */}
            <List>
@@ -67,6 +68,8 @@ class App extends Component {
                    <Link className = "link" to = "/reference">
                          <ListItemGraphic className = "icon" graphic={<MaterialIcon icon="folder"/>} />
                          <ListItemText primaryText="Reference" />
+
+
                   </Link>
               </ListItem>
 
@@ -75,7 +78,8 @@ class App extends Component {
               <ListItem>
                    <Link className = "link" to="/codepen">
                          <ListItemGraphic className = "icon" graphic={<MaterialIcon icon="code"/>} />
-                         <ListItemText primaryText="CodePen" />
+
+                       <ListItemText primaryText="CodePen" />
                    </Link>
               </ListItem>
 
