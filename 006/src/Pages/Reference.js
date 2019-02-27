@@ -4,7 +4,7 @@ import InfoCard from '../Components/InfoCard';
 // - - - - - - - - - - - - - - - - - - - - - //
 import {Cell, Grid, Row} from '@material/react-layout-grid';
 import List, {ListItem, ListItemText, ListItemGraphic} from '@material/react-list';
-import { Headline1, Headline4, Headline6, Headline2 } from '@material/react-typography';
+import { Headline4, Headline6, Headline2 } from '@material/react-typography';
 import MaterialIcon from '@material/react-material-icon';
 import Button from '@material/react-button';
 import TextField, {Input} from '@material/react-text-field';
@@ -52,9 +52,12 @@ render() {
     <Row>
     <Cell columns = {8}>
       <Headline4> Reference </Headline4>
-      <TextField className = "Search"
-    trailingIcon={<MaterialIcon role="button" icon="search"/>}
-  ><Input
+      <TextField
+        outlined
+        className = "Search"
+        trailingIcon={<MaterialIcon role="button" icon="search"/>}
+  >
+  <Input
      value={this.state.value}
      onChange={(e) => this.setState({value: e.currentTarget.value})} />
   </TextField>

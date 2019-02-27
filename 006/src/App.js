@@ -14,6 +14,8 @@ import { Headline6} from '@material/react-typography';
 import Start from './Pages/Start';
 import Reference from './Pages/Reference';
 import CodePen from './Pages/Codepen';
+import Examples from './Pages/Examples';
+import Learn from './Pages/Learn';
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 
 // eslint-disable-next-line
@@ -83,6 +85,33 @@ class App extends Component {
                    </Link>
               </ListItem>
 
+              {/* * * * */}
+
+                <ListItem>
+                  <Link className = "link" to="/examples">
+                  <ListItemGraphic className = "icon" graphic={<MaterialIcon icon="search"/>} />
+                  <ListItemText primaryText ="Examples" />
+                  </Link>
+                  </ListItem>
+
+
+                  {/* * * * */}
+
+                    <ListItem>
+                      <Link className = "link" to="/learn">
+                      <ListItemGraphic className = "icon" graphic={<MaterialIcon icon="school"/>} />
+                      <ListItemText primaryText ="Learn" />
+                      </Link>
+                      </ListItem>
+
+                      {/* * * * */}
+
+                        <ListItem>
+                          <Link className = "link" to="www.github.com/edelprior">
+                          <ListItemGraphic className = "icon" graphic={<MaterialIcon icon="device_hub"/>} />
+                          <ListItemText primaryText ="GitHub" />
+                          </Link>
+                          </ListItem>
             </List>
           </DrawerContent>
         </Drawer>
@@ -106,6 +135,8 @@ class App extends Component {
                       <Route exact path  = "/" component={Start}/>
                       <Route path = "/reference" component={Reference}/>
                       <Route path = "/codepen" component = {CodePen}/>
+                        <Route path = "/examples" component = {Examples}/>
+                          <Route path = "/learn" component = {Learn}/>
                </TopAppBarFixedAdjust>
 
             {/* Path so the Router knows which component to show */ }
