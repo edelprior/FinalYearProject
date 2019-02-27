@@ -45,6 +45,7 @@ class App extends Component {
         <div className="drawer-container">
         {/* - - - - - - - - - - - - - - - - - - - - - - - */}
         <Drawer
+          className = "drawer"
           dismissible
           open={this.state.open}
           onClose={() => this.setState({open: false})}
@@ -121,7 +122,7 @@ class App extends Component {
         <DrawerAppContent className="drawer-app-content">
             <TopAppBar className = "TopAppBar"
               navigationIcon={
-                <MaterialIcon icon="more_horiz"onClick={() =>
+                <MaterialIcon icon="menu"onClick={() =>
                  this.setState({open: !this.state.open})}>
                  {this.state.open ? <MaterialIcon icon = "close"/>
                                   : <MaterialIcon icon = "menu" />

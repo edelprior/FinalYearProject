@@ -30,6 +30,10 @@
   height: 100vh;
   overflow: scroll;
 }
+.drawer {
+  @include mdc-drawer-width(30%);
+  @include mdc-drawer-item-icon-ink-color($orange);
+}
 .link {
     text-decoration: none;
     color: $berry;
@@ -42,7 +46,8 @@
     @include mdc-top-app-bar-icon-ink-color($berry);
 
   }
-  .modal {
+
+.modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -52,10 +57,11 @@
 
     .CardModal {
       position:fixed;
-      width: 100%;
+      width: 80%;
       height: 60%;
       top:15%;
       left:50%;
+
 
     }
   }
@@ -66,21 +72,23 @@
 
 }
 
+.InfoCard {
+  @include mdc-card-fill-color($blue);
+}
 .welcomeText {
 position: center;
 }
 .Alpha {
   height: 5%;
 }
-  .iconOpen {
+.contentCard {
+  margin-left: 2%;
+}
+.iconOpen {
   float:right;
-  margin-left: 30px
+  margin-left: 30px;
   }
 
-  .display-block {
-    display: block;
-  }
-
-  .display-none {
+.display-none {
     display: none;
   }
