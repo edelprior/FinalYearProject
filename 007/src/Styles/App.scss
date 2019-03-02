@@ -1,0 +1,94 @@
+// Using the Material Docuemntation on
+// https://github.com/material-components/material-components-web-react
+// The Sass modules were imported within the terminal
+
+
+@import '@material/react-drawer/index.scss';
+@import '@material/react-top-app-bar/index.scss';
+@import '@material/react-material-icon/index.scss';
+@import '@material/react-list/index.scss';
+@import '@material/react-layout-grid/index.scss';
+@import '@material/react-typography/index.scss';
+@import '@material/react-button/index.scss';
+@import '@material/react-card/index.scss';
+@import '@material/react-text-field/index.scss';
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+// Declaring universal variables in another Sass files to adhere
+// to good practice, found on https://sass-lang.com/documentation/file.SASS_REFERENCE.html
+// Keeps code clean and legible
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+@import "./colours";
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+// Importing Sass Mixins to customize the MDC components further
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+@import "@material/top-app-bar/mixins";
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+.drawer-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: scroll;
+}
+.drawer {
+  @include mdc-drawer-width(30%);
+  @include mdc-drawer-item-icon-ink-color($orange);
+}
+.link {
+    text-decoration: none;
+    color: $berry;
+  }
+.icon {
+  transform: scale(.85);
+}
+.TopAppBar{
+    @include mdc-top-app-bar-fill-color($transparent);
+    @include mdc-top-app-bar-icon-ink-color($berry);
+
+  }
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+
+
+    .CardModal {
+      position:fixed;
+      width: 80%;
+      height: 60%;
+      top:15%;
+      left:50%;
+
+
+    }
+  }
+.Search {
+  width: 55%;
+  @include mdc-text-field-textarea-fill-color(white);
+  @include mdc-text-field-fill-color(white);
+
+}
+
+.InfoCard {
+  @include mdc-card-fill-color($blue);
+}
+.welcomeText {
+position: center;
+}
+.Alpha {
+  height: 5%;
+}
+.contentCard {
+  margin-left: 2%;
+}
+.iconOpen {
+  float:right;
+  margin-left: 30px;
+  }
+
+.display-none {
+    display: none;
+  }
