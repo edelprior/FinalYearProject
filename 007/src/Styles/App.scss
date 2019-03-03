@@ -27,23 +27,27 @@
 .drawer-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  overflow: scroll;
+}
+.InfoCardList{
+  display: flex;
+  flex-direction: column;
   overflow: scroll;
 }
 .drawer {
   @include mdc-drawer-width(30%);
-  @include mdc-drawer-item-icon-ink-color($orange);
+  @include mdc-drawer-item-icon-ink-color($blue);
 }
 .link {
     text-decoration: none;
-    color: $berry;
+    color: black;
   }
 .icon {
-  transform: scale(.85);
+  transform: scale(1.25);
 }
 .TopAppBar{
     @include mdc-top-app-bar-fill-color($transparent);
-    @include mdc-top-app-bar-icon-ink-color($berry);
+    @include mdc-top-app-bar-icon-ink-color($blue);
 
   }
 
@@ -79,7 +83,7 @@
 position: center;
 }
 .Alpha {
-  height: 5%;
+  height: 25%;
 }
 .contentCard {
   margin-left: 2%;

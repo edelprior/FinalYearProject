@@ -16,7 +16,6 @@ import Reference from './Pages/Reference';
 import CodePen from './Pages/Codepen';
 import Examples from './Pages/Examples';
 import Learn from './Pages/Learn';
-import Tips from './Components/Tips';
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 
 // eslint-disable-next-line
@@ -37,13 +36,10 @@ import Tips from './Components/Tips';
 
 class App extends Component {
    state = {open: true,
-            tips: [
-                    {title: 'Color', subtitle: 'learn more'},
-                    {title: 'Focus', subtitle: 'learn more'},
-                  ]};
-
-
+   };
     render() {
+
+
       return (
 
         <BrowserRouter>
@@ -148,8 +144,7 @@ class App extends Component {
             {/* Path so the Router knows which component to show */ }
           </DrawerAppContent>
          {/* - - - - - - - - - - - - - - - - - - - - - - - */}
-        <Tips tips = {this.state.tips}/>
-        {console.log(this.state.tips)}
+
          {/* Closing Divs for Container and BrowserRouter (BrowserRouter can only return one div)*/}
          </div>
         </BrowserRouter>

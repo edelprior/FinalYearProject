@@ -18,11 +18,16 @@ class App extends Component {
     }
   ]
 }
+
+
   render() {
+    console.log(
+      this.state.todos.title
+    );
     return (
       <div>
     <h1> Todo </h1>
-    <Todos key = {this.state.todos.title} todos={this.state.todos}/>
+    <Todos todos={this.state.todos}/>
       </div>
     );
   }

@@ -5,6 +5,7 @@ class TodoItem extends Component {
     console.log(this.props.todo.completed);
     return (
       <div>
+      <p> TodoItem </p>
       <p> {this.props.todo.completed} </p>
       </div>
 

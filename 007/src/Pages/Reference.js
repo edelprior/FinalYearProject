@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import '../Styles/App.scss';
-import InfoCard from '../Components/InfoCard';
+import Data from '../Components/Data';
 // - - - - - - - - - - - - - - - - - - - - - //
 import {Cell, Grid, Row} from '@material/react-layout-grid';
 import List, {ListItem, ListItemText, ListItemGraphic} from '@material/react-list';
-import { Headline4, Headline6, Headline2 } from '@material/react-typography';
+import { Headline4, Headline6, Headline3 } from '@material/react-typography';
 import MaterialIcon from '@material/react-material-icon';
 import Button from '@material/react-button';
 import TextField, {Input} from '@material/react-text-field';
+
 // - - - - - - - - - - - - - - - - - - - - - //
 
 // eslint-disable-next-line
@@ -34,20 +35,29 @@ import TextField, {Input} from '@material/react-text-field';
 
 
 class Reference extends Component {
-state = { show: false,
-          value: ''
+  constructor() {
+    super();
+
+    this.state = { show: false,
+                  value: '',
+}
+    this.handleClick = this.handleClick.bind(this);
+
 }
 show = () => {
         this.setState({ show: true });
       }
 
-      hide = () => {
+hide = () => {
         this.setState({ show: false });
-      }
+}
 
-
+handleClick(event) {
+  console.log("clicked");
+}
 
 render() {
+    console.log(this.props.tips);
   return(
     <Grid>
     <Row>
@@ -64,24 +74,28 @@ render() {
   </TextField>
   </Cell>
   </Row>
+           {/* - - - - - - - - - - - - - - - - - - - - - - - */}
    <Row>
 <Cell columns = {6}>
-  <Button dense className = "Alpha"><Headline2> A </Headline2></Button>
+  <Button dense className = "Alpha" onClick = {this.handleClick}><Headline3> A </Headline3></Button>
 </Cell>
 </Row>
+         {/* - - - - - - - - - - - - - - - - - - - - - - - */}
 <Row>
 <Cell columns = {6}>
-  <Button dense className = "Alpha"><Headline2> B </Headline2></Button>
+  <Button dense className = "Alpha"><Headline3> B </Headline3></Button>
 </Cell>
 </Row>
+         {/* - - - - - - - - - - - - - - - - - - - - - - - */}
 <Row>
+
 <Cell columns={6}>
-  <Button dense className = "Alpha"><Headline2> C </Headline2></Button>
+  <Button dense className = "Alpha"><Headline3> C </Headline3></Button>
   </Cell>
   </Row>
   <Row>
   <Cell>
-  <Button dense className = "Alpha"><Headline2> D </Headline2></Button>
+  <Button dense className = "Alpha"><Headline3> D </Headline3></Button>
 
    <List>
       <ListItem type='button' onClick={this.show}>
@@ -90,14 +104,14 @@ render() {
         <ListItemGraphic className = "iconOpen" graphic={<MaterialIcon icon="open_in_new"/>} />
         </ListItem>
 
-
+         {/* - - - - - - - - - - - - - - - - - - - - - - - */}
 
         <ListItem type='button' onClick={this.show}>
           <Headline6> <ListItemText primaryText='Perception'>
           </ListItemText></Headline6>
           <ListItemGraphic className = "iconOpen" graphic={<MaterialIcon icon="open_in_new"/>} />
           </ListItem>
-
+         {/* - - - - - - - - - - - - - - - - - - - - - - - */}
 
           <ListItem type='button' onClick={this.show}>
             <Headline6> <ListItemText primaryText='Focus Order'>
@@ -105,19 +119,19 @@ render() {
             <ListItemGraphic className = "iconOpen" graphic={<MaterialIcon icon="open_in_new"/>} />
             </ListItem>
 
-
-            <ListItem type='button' onClick={this.show}>
-              <Headline6> <ListItemText primaryText='Clarity'>
-              </ListItemText></Headline6>
+         {/* - - - - - - - - - - - - - - - - - - - - - - - */}
+            <ListItem type='button' onClick={this.show && this.handleClick}>
+              <Headline6> Clarity </Headline6>
               <ListItemGraphic className = "iconOpen" graphic={<MaterialIcon icon="open_in_new"/>} />
               </ListItem>
               </List>
               </Cell>
               <Row>
               <Cell columns = {8}>
+
+
+
         <Modal show={this.state.show} handleClose={this.hide} >
-
-
         </Modal>
 
     </Cell>
@@ -128,6 +142,11 @@ render() {
   );
 }
 }
+// eslint-disable-next-line
+{/*
+    - Trying to get the Material Icon button to be Menu when the drawer
+      is closed, and when open close icon
+*/}
 
 const Modal = ({ handleClose, show, children }) => {
   const showHideClassName = show ? 'modal display-block' : 'modal display-none';
@@ -136,10 +155,8 @@ const Modal = ({ handleClose, show, children }) => {
     <div className={showHideClassName}>
       <section className = "CardModal">
         {children}
-        {this.props.dataList}
             <MaterialIcon icon="close" onClick={handleClose}/>
-        <InfoCard/>
-
+        <Data/>
       </section>
     </div>
   );
