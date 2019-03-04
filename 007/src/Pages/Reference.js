@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import '../Styles/App.scss';
 import Data from '../Components/Data';
+import TipCard from '../Components/TipCard';
 // - - - - - - - - - - - - - - - - - - - - - //
 import {Cell, Grid, Row} from '@material/react-layout-grid';
-import List, {ListItem, ListItemText, ListItemGraphic} from '@material/react-list';
-import { Headline4, Headline6, Headline3 } from '@material/react-typography';
+// import List, {ListItem, ListItemText, ListItemGraphic} from '@material/react-list';
+import { Headline4 } from '@material/react-typography';
 import MaterialIcon from '@material/react-material-icon';
-import Button from '@material/react-button';
+// import Button from '@material/react-button';
 import TextField, {Input} from '@material/react-text-field';
-
+// import Tips from '../Components/Tips';
 // - - - - - - - - - - - - - - - - - - - - - //
 
 // eslint-disable-next-line
@@ -39,13 +40,14 @@ class Reference extends Component {
     super();
 
     this.state = { show: false,
-                  value: '',
+                   searchText: '',
+                   modalData: []
 }
-    this.handleClick = this.handleClick.bind(this);
 
 }
-show = () => {
-        this.setState({ show: true });
+show = (data) => {
+        this.setState({ show: true,
+                        modalData: data});
       }
 
 hide = () => {
@@ -57,17 +59,18 @@ handleClick(event) {
 }
 
 render() {
-    console.log(this.props.tips);
   return(
     <Grid>
     <Row>
     <Cell columns = {8}>
       <Headline4> Reference </Headline4>
-      <TextField
+
+        <TextField
         outlined
         className = "Search"
         trailingIcon={<MaterialIcon role="button" icon="search"/>}
   >
+
   <Input
      value={this.state.value}
      onChange={(e) => this.setState({value: e.currentTarget.value})} />
@@ -75,63 +78,24 @@ render() {
   </Cell>
   </Row>
            {/* - - - - - - - - - - - - - - - - - - - - - - - */}
-   <Row>
+   {/* <Row>
 <Cell columns = {6}>
   <Button dense className = "Alpha" onClick = {this.handleClick}><Headline3> A </Headline3></Button>
 </Cell>
-</Row>
+</Row> */}
          {/* - - - - - - - - - - - - - - - - - - - - - - - */}
+
 <Row>
-<Cell columns = {6}>
-  <Button dense className = "Alpha"><Headline3> B </Headline3></Button>
-</Cell>
-</Row>
-         {/* - - - - - - - - - - - - - - - - - - - - - - - */}
-<Row>
+<Cell>
+<Data  show = {this.show} modalData = {this.modalData}/>
 
-<Cell columns={6}>
-  <Button dense className = "Alpha"><Headline3> C </Headline3></Button>
-  </Cell>
-  </Row>
-  <Row>
-  <Cell>
-  <Button dense className = "Alpha"><Headline3> D </Headline3></Button>
-
-   <List>
-      <ListItem type='button' onClick={this.show}>
-        <Headline6> <ListItemText primaryText='Color'>
-        </ListItemText></Headline6>
-        <ListItemGraphic className = "iconOpen" graphic={<MaterialIcon icon="open_in_new"/>} />
-        </ListItem>
-
-         {/* - - - - - - - - - - - - - - - - - - - - - - - */}
-
-        <ListItem type='button' onClick={this.show}>
-          <Headline6> <ListItemText primaryText='Perception'>
-          </ListItemText></Headline6>
-          <ListItemGraphic className = "iconOpen" graphic={<MaterialIcon icon="open_in_new"/>} />
-          </ListItem>
-         {/* - - - - - - - - - - - - - - - - - - - - - - - */}
-
-          <ListItem type='button' onClick={this.show}>
-            <Headline6> <ListItemText primaryText='Focus Order'>
-            </ListItemText></Headline6>
-            <ListItemGraphic className = "iconOpen" graphic={<MaterialIcon icon="open_in_new"/>} />
-            </ListItem>
-
-         {/* - - - - - - - - - - - - - - - - - - - - - - - */}
-            <ListItem type='button' onClick={this.show && this.handleClick}>
-              <Headline6> Clarity </Headline6>
-              <ListItemGraphic className = "iconOpen" graphic={<MaterialIcon icon="open_in_new"/>} />
-              </ListItem>
-              </List>
               </Cell>
               <Row>
               <Cell columns = {8}>
 
 
 
-        <Modal show={this.state.show} handleClose={this.hide} >
+        <Modal show={this.state.show} modalData = {this.state.modalData} handleClose={this.hide} >
         </Modal>
 
     </Cell>
@@ -148,15 +112,16 @@ render() {
       is closed, and when open close icon
 */}
 
-const Modal = ({ handleClose, show, children }) => {
-  const showHideClassName = show ? 'modal display-block' : 'modal display-none';
+const Modal = (props) => {
+  const showHideClassName = props.show ? 'modal display-block' : 'modal display-none';
 
   return (
+
     <div className={showHideClassName}>
       <section className = "CardModal">
-        {children}
-            <MaterialIcon icon="close" onClick={handleClose}/>
-        <Data/>
+
+            <MaterialIcon icon="close" onClick={props.handleClose}/>
+      <TipCard modalData = {props.modalData} />
       </section>
     </div>
   );
