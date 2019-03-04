@@ -21,9 +21,9 @@ class TipCard extends Component {
       <Grid>
       <Row>
       <Cell columns = {6}>
-      <List className = "InfoCardList">
+      <List>
 
-      <Card className = "InfoCard">
+      <Card>
         <CardPrimaryContent className="contentCard">
           <Headline4> {this.props.modalData.title}</Headline4>
         </CardPrimaryContent>

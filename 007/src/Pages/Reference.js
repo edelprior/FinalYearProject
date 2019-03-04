@@ -6,6 +6,8 @@ import TipCard from '../Components/TipCard';
 import {Cell, Grid, Row} from '@material/react-layout-grid';
 // import List, {ListItem, ListItemText, ListItemGraphic} from '@material/react-list';
 import { Headline4 } from '@material/react-typography';
+import {TopAppBarFixedAdjust} from '@material/react-top-app-bar';
+
 import MaterialIcon from '@material/react-material-icon';
 // import Button from '@material/react-button';
 import TextField, {Input} from '@material/react-text-field';
@@ -17,13 +19,6 @@ import TextField, {Input} from '@material/react-text-field';
     - - - - -
     Whats Going in this Component?
     - - - - -
-
-
-    ''''''''     '' ''           '' '''       '' ''
-       ''       ''   ''          ''   ''    ''   ''
-       ''      ''     ''         ''   ''   ''     ''
-       ''        '''''           ''''''      '''''
-
 
     - - - - -
     Funcitonality?
@@ -38,38 +33,32 @@ import TextField, {Input} from '@material/react-text-field';
 class Reference extends Component {
   constructor() {
     super();
-
     this.state = { show: false,
                    searchText: '',
                    modalData: []
-}
+                 }
+               }
+    show = (data) => {
+    this.setState({ show: true,
+                    modalData: data});
+    }
+    hide = () => {
+    this.setState({ show: false });
+    }
 
-}
-show = (data) => {
-        this.setState({ show: true,
-                        modalData: data});
-      }
-
-hide = () => {
-        this.setState({ show: false });
-}
-
-handleClick(event) {
-  console.log("clicked");
-}
-
-render() {
-  return(
-    <Grid>
-    <Row>
-    <Cell columns = {8}>
-      <Headline4> Reference </Headline4>
-
-        <TextField
-        outlined
-        className = "Search"
-        trailingIcon={<MaterialIcon role="button" icon="search"/>}
-  >
+  render() {
+    return(
+      <Grid>
+        <Row>
+          <Cell columns = {10}>
+              <TopAppBarFixedAdjust>
+                  <Headline4> Reference </Headline4>
+              </TopAppBarFixedAdjust>
+              <TextField
+                outlined
+                className = "Search"
+                trailingIcon={<MaterialIcon role="button" icon="search"/>}
+              >
 
   <Input
      value={this.state.value}

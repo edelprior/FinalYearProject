@@ -8,22 +8,24 @@ import {Cell, Grid, Row} from '@material/react-layout-grid';
 class Tips extends Component {
 
   render() {
+
       return this.props.tips.map((tip) => (
       <Grid>
       <Row>
-      <Cell columns = {12}>
-      <List>
-      <ListItem type='button' name='Edel is cool' onClick = {()=> this.props.show(tip)}> <Headline6>
+      <Cell className = "list" columns = {12}>
+      <ListItem   onClick = {()=> this.props.show(tip)}> <Headline6>
       {tip.title}</Headline6>
       <ListItemGraphic className = "iconOpen" graphic={<MaterialIcon icon="open_in_new"/>} />
+
       </ListItem>
-      </List>
       </Cell>
       </Row>
       </Grid>
     ));
   }
+
 }
+
 
 
 export default Tips;
