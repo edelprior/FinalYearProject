@@ -24,20 +24,16 @@
 @import "@material/top-app-bar/mixins";
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 
-.drawer-container {
-  display: flex;
-  flex-direction: column;
-  overflow: scroll;
-}
-.InfoCardList{
-  display: flex;
-  flex-direction: column;
-  overflow: scroll;
-}
 .drawer {
+
   @include mdc-drawer-width(30%);
   @include mdc-drawer-item-icon-ink-color($blue);
 }
+
+.list {
+    overflow: auto;
+}
+
 .link {
     text-decoration: none;
     color: black;
@@ -51,16 +47,13 @@
 
   }
 
+
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
     width:100%;
     height: 100%;
 
 
     .CardModal {
-      position:fixed;
       width: 80%;
       height: 60%;
       top:15%;
@@ -82,9 +75,7 @@
 .welcomeText {
 position: center;
 }
-.Alpha {
-  height: 25%;
-}
+
 .contentCard {
   margin-left: 2%;
 }

@@ -7,24 +7,25 @@ import Card, {
 } from "@material/react-card";
 import '../Pages/Codepen';
 import '../Styles/App.scss';
-import { Headline4} from '@material/react-typography';
+import { Headline4, Headline6} from '@material/react-typography';
 import {Cell, Grid, Row} from '@material/react-layout-grid';
 import MaterialIcon from '@material/react-material-icon';
 import List from '@material/react-list';
 class TipCard extends Component {
-  render() {
 
+
+  render() {
+    console.log(this.props);
     return (
 
       <Grid>
       <Row>
       <Cell columns = {6}>
-      <List className = "InfoCardList">
+      <List>
 
-      <Card className = "InfoCard">
+      <Card>
         <CardPrimaryContent className="contentCard">
-          <Headline4> {this.props.tip.title} </Headline4>
-
+          <Headline4> {this.props.modalData.title}</Headline4>
         </CardPrimaryContent>
 
         <CardActions>
@@ -33,7 +34,7 @@ class TipCard extends Component {
           </CardActionButtons>
 
           <CardActionIcons>
-            <p>Click to view CodePen</p>
+         <Headline6>{this.props.modalData.subtitle} </Headline6>
           </CardActionIcons>
         </CardActions>
       </Card>
