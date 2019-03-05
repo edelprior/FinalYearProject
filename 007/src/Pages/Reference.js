@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../Styles/App.scss';
 import Data from '../Components/Data';
 import TipCard from '../Components/TipCard';
+import SearchBar from '../Components/SearchBar';
 // - - - - - - - - - - - - - - - - - - - - - //
 
 
@@ -11,7 +12,6 @@ import { Headline3, Headline4 } from '@material/react-typography';
 import {TopAppBarFixedAdjust} from '@material/react-top-app-bar';
 
 import MaterialIcon from '@material/react-material-icon';
-import TextField, {Input} from '@material/react-text-field';
 
 
 // - - - - - - - - - - - - - - - - - - - - - //
@@ -59,6 +59,7 @@ class Reference extends Component {
   </Cell>
   </Row>
 
+
   <Row>
 <Cell>
   <Button dense className = "Alpha" onClick = {this.handleClick}><Headline3> A </Headline3></Button>
@@ -74,14 +75,13 @@ class Reference extends Component {
               <Row>
               <Cell columns = {8}>
 
-
-
         <Modal show={this.state.show} modalData = {this.state.modalData} handleClose={this.hide} >
         </Modal>
 
     </Cell>
     </Row>
     </Row>
+
       </Grid>
 
   );

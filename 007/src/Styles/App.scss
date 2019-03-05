@@ -55,7 +55,7 @@
 }
 
 .Search {
-  width: 55%;
+  width: 100%;
   @include mdc-text-field-textarea-fill-color(white);
   @include mdc-text-field-fill-color(white);
   @include mdc-text-field-focused-outline-color($blue);

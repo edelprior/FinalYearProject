@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Tips from './Tips';
-import List from '@material/react-list';
-
-
+import SearchBar from './SearchBar';
 class Data extends Component {
 state = {   tips: [
                    {id: 1, title: 'Color', subtitle: 'learn more'},
@@ -20,9 +18,10 @@ state = {   tips: [
   render(){
 
   return (
-    <List className = "list">
+    <div>
+    <SearchBar  tips = {this.state.tips} title = {this.state.tips.title} />
     <Tips key = {this.state.id} tips = {this.state.tips} show = {this.props.show}/>
-    </List>
+    </div>
   );
 }
 }
