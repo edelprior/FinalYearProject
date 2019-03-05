@@ -24,58 +24,53 @@
 @import "@material/top-app-bar/mixins";
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 
+.drawer-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: scroll;
+}
 .drawer {
-
   @include mdc-drawer-width(30%);
   @include mdc-drawer-item-icon-ink-color($blue);
 }
-
-.list {
-    overflow: auto;
-}
-
 .link {
     text-decoration: none;
     color: black;
   }
 .icon {
-  transform: scale(1.25);
+  transform: scale(1.45);
 }
 .TopAppBar{
     @include mdc-top-app-bar-fill-color($transparent);
     @include mdc-top-app-bar-icon-ink-color($blue);
-
   }
 
-
-.modal {
-    width:100%;
-    height: 100%;
-
-
-    .CardModal {
-      width: 80%;
+.CardModal {
+      position:fixed;
+      width: 100%;
       height: 60%;
       top:15%;
       left:50%;
+}
 
-
-    }
-  }
 .Search {
   width: 55%;
   @include mdc-text-field-textarea-fill-color(white);
   @include mdc-text-field-fill-color(white);
-
+  @include mdc-text-field-focused-outline-color($blue);
+  @include mdc-text-field-outline-color($blue);
 }
 
-.InfoCard {
+.contentCard {
   @include mdc-card-fill-color($blue);
 }
 .welcomeText {
 position: center;
 }
-
+.Alpha {
+  height: 55%;
+}
 .contentCard {
   margin-left: 2%;
 }

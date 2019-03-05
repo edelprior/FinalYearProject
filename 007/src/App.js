@@ -133,13 +133,13 @@ class App extends Component {
             />
             {/* Trying to get the Material Icon button to be Menu when the drawer is closed, and when open close icon */ }
 
-
+            <TopAppBarFixedAdjust>
                       <Route exact path  = "/" component={Start}/>
                       <Route path = "/reference" component={Reference}/>
                       <Route path = "/codepen" component = {CodePen}/>
                         <Route path = "/examples" component = {Examples}/>
                           <Route path = "/learn" component = {Learn}/>
-    
+                          </TopAppBarFixedAdjust>
 
             {/* Path so the Router knows which component to show */ }
           </DrawerAppContent>

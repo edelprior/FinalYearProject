@@ -3,15 +3,17 @@ import '../Styles/App.scss';
 import Data from '../Components/Data';
 import TipCard from '../Components/TipCard';
 // - - - - - - - - - - - - - - - - - - - - - //
+
+
 import {Cell, Grid, Row} from '@material/react-layout-grid';
-// import List, {ListItem, ListItemText, ListItemGraphic} from '@material/react-list';
-import { Headline4 } from '@material/react-typography';
+import Button from '@material/react-button';
+import { Headline3, Headline4 } from '@material/react-typography';
 import {TopAppBarFixedAdjust} from '@material/react-top-app-bar';
 
 import MaterialIcon from '@material/react-material-icon';
-// import Button from '@material/react-button';
 import TextField, {Input} from '@material/react-text-field';
-// import Tips from '../Components/Tips';
+
+
 // - - - - - - - - - - - - - - - - - - - - - //
 
 // eslint-disable-next-line
@@ -34,7 +36,6 @@ class Reference extends Component {
   constructor() {
     super();
     this.state = { show: false,
-                   searchText: '',
                    modalData: []
                  }
                }
@@ -50,29 +51,20 @@ class Reference extends Component {
     return(
       <Grid>
         <Row>
-          <Cell columns = {10}>
+          <Cell>
               <TopAppBarFixedAdjust>
                   <Headline4> Reference </Headline4>
               </TopAppBarFixedAdjust>
-              <TextField
-                outlined
-                className = "Search"
-                trailingIcon={<MaterialIcon role="button" icon="search"/>}
-              >
 
-  <Input
-     value={this.state.value}
-     onChange={(e) => this.setState({value: e.currentTarget.value})} />
-  </TextField>
   </Cell>
   </Row>
-           {/* - - - - - - - - - - - - - - - - - - - - - - - */}
-   {/* <Row>
-<Cell columns = {6}>
+
+  <Row>
+<Cell>
   <Button dense className = "Alpha" onClick = {this.handleClick}><Headline3> A </Headline3></Button>
 </Cell>
-</Row> */}
-         {/* - - - - - - - - - - - - - - - - - - - - - - - */}
+</Row>
+
 
 <Row>
 <Cell>
@@ -110,7 +102,7 @@ const Modal = (props) => {
       <section className = "CardModal">
 
             <MaterialIcon icon="close" onClick={props.handleClose}/>
-      <TipCard modalData = {props.modalData} />
+            <TipCard modalData = {props.modalData} />
       </section>
     </div>
   );
