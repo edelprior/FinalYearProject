@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import '../Styles/App.scss';
 import Data from '../Components/Data';
-import TipCard from '../Components/TipCard';
-import SearchBar from '../Components/SearchBar';
+import TipCard from '../Components/TipCard'
 // - - - - - - - - - - - - - - - - - - - - - //
 
 
@@ -68,17 +67,17 @@ class Reference extends Component {
 
 
 <Row>
-<Cell>
-<Data  show = {this.show} modalData = {this.modalData}/>
+<Cell columns = {6}>
+<Data  show = {this.show} modalData = {this.modalData} tips = {this.props.tips}/>
 
               </Cell>
               <Row>
-              <Cell columns = {8}>
 
-        <Modal show={this.state.show} modalData = {this.state.modalData} handleClose={this.hide} >
+
+        <Modal className = "modalTest" show={this.state.show} modalData = {this.state.modalData} handleClose={this.hide} >
         </Modal>
 
-    </Cell>
+
     </Row>
     </Row>
 
@@ -97,14 +96,14 @@ const Modal = (props) => {
   const showHideClassName = props.show ? 'modal display-block' : 'modal display-none';
 
   return (
-
-    <div className={showHideClassName}>
-      <section className = "CardModal">
-
-            <MaterialIcon icon="close" onClick={props.handleClose}/>
+    <Grid>
+    <Row className = {showHideClassName}>
+    <Cell className = "CardModal" columns = {12}>
+            <MaterialIcon className = "closeIcon" icon="close" onClick={props.handleClose}/>
             <TipCard modalData = {props.modalData} />
-      </section>
-    </div>
+      </Cell>
+    </Row>
+    </Grid>
   );
 };
 

@@ -8,7 +8,7 @@ import Card, {
   CardActionButtons,
   CardActionIcons
 } from "@material/react-card";
-import { Headline4, Headline6} from '@material/react-typography';
+import { Headline4, Headline5, Headline6} from '@material/react-typography';
 import {Cell, Grid, Row} from '@material/react-layout-grid';
 import MaterialIcon from '@material/react-material-icon';
 import List from '@material/react-list';
@@ -30,33 +30,32 @@ import List from '@material/react-list';
 class TipCard extends Component {
   render() {
     return (
-      <Grid>
-        <Row>
-          <Cell>
+          <Cell columns = {12}>
            {/* - - - - */}
-            <List>
+
               <Card className="contentCard">
-              <CardPrimaryContent>
+              <CardPrimaryContent className = "typeContentCard">
                 <Headline4>
                   {this.props.modalData.title}
                 </Headline4>
+
+                  <Headline6>{this.props.modalData.overview} </Headline6>
               </CardPrimaryContent>
               {/* - - - - */}
               <CardActions>
                 <CardActionButtons>
-                  <MaterialIcon icon="code"/>
+                  <MaterialIcon icon="code" link = {this.props.modalData.link} />
                 </CardActionButtons>
                {/* - - - - */}
                   <CardActionIcons>
-                    <Headline6>{this.props.modalData.subtitle} </Headline6>
+                    <Headline6></Headline6>
                   </CardActionIcons>
               </CardActions>
               </Card>
-            </List>
+
             {/* - - - - */}
           </Cell>
-        </Row>
-      </Grid>
+
     );
   }
 }

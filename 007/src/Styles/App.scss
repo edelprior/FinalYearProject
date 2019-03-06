@@ -47,13 +47,15 @@
   }
 
 .CardModal {
-      position:fixed;
-      width: 100%;
-      height: 60%;
-      top:15%;
-      left:50%;
+  position: sticky;
+      width: 150%;
+
 }
 
+.closeIcon {
+    transform: scale(1.25);
+    margin: 2%;
+}
 .Search {
   width: 100%;
   @include mdc-text-field-textarea-fill-color(white);
@@ -62,6 +64,10 @@
   @include mdc-text-field-outline-color($blue);
 }
 
+.typeContentCard {
+  margin-left: 5%;
+  margin-right:  5%;
+}
 .contentCard {
   @include mdc-card-fill-color($blue);
 }

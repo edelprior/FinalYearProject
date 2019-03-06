@@ -25,7 +25,6 @@ import {Cell, Grid, Row} from '@material/react-layout-grid';
 class Tips extends Component {
 
   render() {
-
       return this.props.tips.map((tip) => (
       <Grid>
       <Row>
