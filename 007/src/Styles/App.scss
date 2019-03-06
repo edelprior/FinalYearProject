@@ -31,8 +31,9 @@
   overflow: scroll;
 }
 .drawer {
-  @include mdc-drawer-width(30%);
-  @include mdc-drawer-item-icon-ink-color($blue);
+  @include mdc-drawer-width(25%);
+  @include mdc-drawer-surface-fill-color($orange);
+  @include mdc-drawer-item-icon-ink-color(black);
 }
 .link {
     text-decoration: none;
