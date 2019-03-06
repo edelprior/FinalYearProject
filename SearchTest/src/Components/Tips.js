@@ -22,6 +22,7 @@ import {Cell, Grid, Row} from '@material/react-layout-grid';
 
 */}
 
+
 class Tips extends Component {
 
   render() {
@@ -39,6 +40,12 @@ class Tips extends Component {
       </List>
       </Cell>
       </Row>
+      <Row>
+      <Cell>
+      <h2>{this.props.title}</h2>
+      <h3>{this.props.subtitle}</h3>
+      </Cell>
+      </Row>
       </Grid>
     ));
   }
@@ -47,4 +54,4 @@ class Tips extends Component {
 
 
 
-export default Tips
+export default Tips;

@@ -1,30 +1,26 @@
 import React, { Component } from 'react';
 import '../Styles/App.scss';
-import TextField, {Input} from '@material/react-text-field';
-import List, {ListItem, ListItemGraphic} from '@material/react-list';
-import MaterialIcon from '@material/react-material-icon';
 import {Cell, Grid, Row} from '@material/react-layout-grid';
-
-
+import TextField, { Input } from '@material/react-text-field';
+import MaterialIcon from '@material/react-material-icon';
 
 class SearchBar extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchString: "",
-
-    };
-}
-    render(){
-
+render() {
 
    console.log(this.props.tips);
     return(
     <Grid>
     <Row>
     <Cell>
-
+    <TextField
+            trailingIcon={<MaterialIcon icon="search"/>}
+            outlined={true}
+          >
+          <Input
+            name={this.props.tips.title}
+            onChange={this.props.handleChange}
+          />
+  </TextField>
     </Cell>
     </Row>
     </Grid>
