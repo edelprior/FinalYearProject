@@ -6,8 +6,8 @@ import TipCard from '../Components/TipCard'
 
 
 import {Cell, Grid, Row} from '@material/react-layout-grid';
-import Button from '@material/react-button';
-import { Headline3, Headline4 } from '@material/react-typography';
+// import Button from '@material/react-button';
+import { Headline4 } from '@material/react-typography';
 import {TopAppBarFixedAdjust} from '@material/react-top-app-bar';
 
 import MaterialIcon from '@material/react-material-icon';
@@ -59,11 +59,11 @@ class Reference extends Component {
   </Row>
 
 
-  <Row>
+  {/* }<Row>
 <Cell>
   <Button dense className = "Alpha" onClick = {this.handleClick}><Headline3> A </Headline3></Button>
 </Cell>
-</Row>
+</Row> */}
 
 
 <Row>

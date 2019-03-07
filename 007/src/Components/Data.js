@@ -49,7 +49,7 @@ class App extends Component {
       );
 
     const tipNames = filteredTips.map(u => {
-      return <Tips tips = {this.state.tips} key={u.id} show = {this.props.show}/>;
+      return <Tips title = {u.title} tip={u} key={u.id} show = {this.props.show}/>;
     });
     return (
 

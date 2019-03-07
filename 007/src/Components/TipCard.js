@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import '../Pages/Codepen';
 import '../Styles/App.scss';
+
 // - - - - - - - - - - - - - - - - - - - - - //
+
 import Card, {
   CardPrimaryContent,
   CardActions,
   CardActionButtons,
   CardActionIcons
 } from "@material/react-card";
-import { Headline4, Headline5, Headline6} from '@material/react-typography';
-import {Cell, Grid, Row} from '@material/react-layout-grid';
+import { Headline4,Headline6} from '@material/react-typography';
+import {Cell} from '@material/react-layout-grid';
 import MaterialIcon from '@material/react-material-icon';
-import List from '@material/react-list';
+
 // - - - - - - - - - - - - - - - - - - - - - //
 
 // eslint-disable-next-line
