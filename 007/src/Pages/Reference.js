@@ -7,8 +7,8 @@ import TipCard from '../Components/TipCard'
 
 import {Cell, Grid, Row} from '@material/react-layout-grid';
 // import Button from '@material/react-button';
-import { Headline4 } from '@material/react-typography';
-import {TopAppBarFixedAdjust} from '@material/react-top-app-bar';
+// import { Headline4 } from '@material/react-typography';
+// import {TopAppBarFixedAdjust} from '@material/react-top-app-bar';
 
 import MaterialIcon from '@material/react-material-icon';
 
@@ -51,9 +51,7 @@ class Reference extends Component {
       <Grid>
         <Row>
           <Cell>
-              <TopAppBarFixedAdjust>
-                  <Headline4> Reference </Headline4>
-              </TopAppBarFixedAdjust>
+
 
   </Cell>
   </Row>

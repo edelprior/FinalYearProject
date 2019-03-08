@@ -7,10 +7,9 @@ import '../Styles/App.scss';
 import Card, {
   CardPrimaryContent,
   CardActions,
-  CardActionButtons,
   CardActionIcons
 } from "@material/react-card";
-import { Headline4,Headline6} from '@material/react-typography';
+import { Headline3, Body1, Body2} from '@material/react-typography';
 import {Cell} from '@material/react-layout-grid';
 import MaterialIcon from '@material/react-material-icon';
 
@@ -35,22 +34,29 @@ class TipCard extends Component {
           <Cell columns = {12}>
            {/* - - - - */}
 
-              <Card className="contentCard">
+              <Card className="typeContentCard" outlined>
               <CardPrimaryContent className = "typeContentCard">
-                <Headline4>
+                <Headline3>
                   {this.props.modalData.title}
-                </Headline4>
+                </Headline3>
 
-                  <Headline6>{this.props.modalData.overview} </Headline6>
-              </CardPrimaryContent>
-              {/* - - - - */}
+                  <Body1>{this.props.modalData.overview} </Body1>
+                  <Body2> {this.props.modalData.info}  </Body2>
+                  <Body1> {this.props.modalData.summary} </Body1>
+
+
+
+                  </CardPrimaryContent>
+
               <CardActions>
-                <CardActionButtons>
-                  <MaterialIcon icon="code" link = {this.props.modalData.link} />
-                </CardActionButtons>
-               {/* - - - - */}
-                  <CardActionIcons>
-                    <Headline6></Headline6>
+
+
+              <CardActionIcons>
+
+                  <MaterialIcon className = "codeicon" icon="code" onClick = {console.log("clicked")}/>
+                  <MaterialIcon className = "codeicon" icon="arrow_drop_down" link = {this.props.modalData.link} />
+
+
                   </CardActionIcons>
               </CardActions>
               </Card>

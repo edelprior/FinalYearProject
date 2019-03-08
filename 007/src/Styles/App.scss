@@ -31,7 +31,7 @@
   overflow: scroll;
 }
 .drawer {
-  @include mdc-drawer-width(25%);
+  @include mdc-drawer-width(30%);
   @include mdc-drawer-surface-fill-color($orange);
   @include mdc-drawer-item-icon-ink-color(black);
 }
@@ -40,7 +40,9 @@
     color: black;
   }
 .icon {
+
   transform: scale(1.45);
+    color: black;
 }
 .TopAppBar{
     @include mdc-top-app-bar-fill-color($transparent);
@@ -48,41 +50,56 @@
   }
 
 .CardModal {
-  position: sticky;
-      width: 150%;
+  position: absolute;
+  width: 45%;
 
 }
 
+.Searchicon {
+  transform: scale(1.25);
+  color: $blue;
+}
+.codeicon {
+   transform: scale(1.55);
+}
 .closeIcon {
     transform: scale(1.25);
     margin: 2%;
 }
 .Search {
-  width: 100%;
-  @include mdc-text-field-textarea-fill-color(white);
-  @include mdc-text-field-fill-color(white);
-  @include mdc-text-field-focused-outline-color($blue);
+  height: 100%;
+  @include mdc-typography(headline5);
+  @include mdc-text-field-textarea-stroke-color($blue);
   @include mdc-text-field-outline-color($blue);
+  @include mdc-text-field-ink-color(black);
+  @include mdc-text-field-label-color($blue);
+  @include mdc-text-field-caret-color($blue);
+}
+
+.NavText {
+  height: 100%;
+  @include mdc-list-item-primary-text-ink-color(black);
+    @include mdc-typography(headline6);
 }
 
 .typeContentCard {
+  @include mdc-card-fill-color($blue);
   margin-left: 5%;
   margin-right:  5%;
 }
-.contentCard {
-  @include mdc-card-fill-color($blue);
-}
+
+
 .welcomeText {
 position: center;
 }
 .Alpha {
   height: 55%;
 }
-.contentCard {
-  margin-left: 2%;
-}
+
+
+
 .iconOpen {
-  float:right;
+  color: black;
   margin-left: 30px;
   }
 

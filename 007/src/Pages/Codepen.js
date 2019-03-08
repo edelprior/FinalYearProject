@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Codepen from 'react-codepen-embed';
+import Iframe from 'react-iframe';
 import {Cell, Grid, Row} from '@material/react-layout-grid';
 // - - - - - - - - - - - - - - - - - - - - - //
 
@@ -25,24 +25,18 @@ render() {
             <Row>
               <Cell columns = {6}>
 
-                    <h1> CodePen </h1>
+                    <h1> Code Playground </h1>
              </Cell>
             </Row>
       {/* - - - - - - - - - - - - - - - - - - - - - - - */}
-            <Row>
-              <Cell columns ={6}>
 
-                <h3> Test out the Code Below </h3>
-              </Cell>
-            </Row>
-      {/* - - - - - - - - - - - - - - - - - - - - - - - */}
             <Row>
                <Cell columns = {10}>
+               <Iframe  url = "https://codesandbox.io/embed/p7nwyz7jkj?fontsize=14"
+                        height = "1000"
+                        sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin">
+               </Iframe>
 
-                     <Codepen hash="xMJYRB" user="edelprior"/>
-                     <Codepen hash="xMJYRB" user="edelprior"
-                      loader={() =>
-                      <div>Loading...</div> } />
                </Cell>
             </Row>
 

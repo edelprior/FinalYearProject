@@ -8,7 +8,7 @@ import TopAppBar, {TopAppBarFixedAdjust} from '@material/react-top-app-bar';
 import Drawer, {DrawerAppContent, DrawerContent, DrawerHeader} from '@material/react-drawer';
 import MaterialIcon from '@material/react-material-icon';
 import List, {ListItem, ListItemGraphic, ListItemText} from '@material/react-list';
-import { Headline4} from '@material/react-typography';
+import { Headline3} from '@material/react-typography';
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 // Importing Components that act as 'pages' within the Router-dom
 import Start from './Pages/Start';
@@ -53,8 +53,8 @@ class App extends Component {
         >
          <DrawerContent>
            <DrawerHeader>
-             <Headline4>
-              Accessibilty Design Handbook</Headline4>
+             <Headline3>
+              Accessibilty Design Handbook</Headline3>
 
            </DrawerHeader>
               {/* - - - - - - - - - - */}
@@ -62,7 +62,7 @@ class App extends Component {
               <ListItem>
                   <Link className = "link" to="/">
                       <ListItemGraphic className = "icon" graphic={<MaterialIcon icon="home"/>} />
-                      <ListItemText primaryText="Start" />
+                      <ListItemText className = "NavText" primaryText="Start" />
                   </Link>
               </ListItem>
 
@@ -71,7 +71,7 @@ class App extends Component {
               <ListItem>
                    <Link className = "link" to = "/reference">
                          <ListItemGraphic className = "icon" graphic={<MaterialIcon icon="folder"/>} />
-                         <ListItemText primaryText="Reference" />
+                         <ListItemText className = "NavText" primaryText="Reference" />
 
 
                   </Link>
@@ -83,7 +83,7 @@ class App extends Component {
                    <Link className = "link" to="/codepen">
                          <ListItemGraphic className = "icon" graphic={<MaterialIcon icon="code"/>} />
 
-                       <ListItemText primaryText="CodePen" />
+                       <ListItemText className = "NavText" primaryText="Code Playground" />
                    </Link>
               </ListItem>
 
@@ -92,7 +92,7 @@ class App extends Component {
                 <ListItem>
                   <Link className = "link" to="/examples">
                   <ListItemGraphic className = "icon" graphic={<MaterialIcon icon="search"/>} />
-                  <ListItemText primaryText ="Examples" />
+                  <ListItemText className = "NavText" primaryText ="Examples" />
                   </Link>
                   </ListItem>
 
@@ -102,7 +102,7 @@ class App extends Component {
                     <ListItem>
                       <Link className = "link" to="/learn">
                       <ListItemGraphic className = "icon" graphic={<MaterialIcon icon="school"/>} />
-                      <ListItemText primaryText ="Learn" />
+                      <ListItemText className = "NavText" primaryText ="Learn" />
                       </Link>
                       </ListItem>
 
@@ -111,7 +111,7 @@ class App extends Component {
                         <ListItem>
                           <Link className = "link" to="www.github.com/edelprior">
                           <ListItemGraphic className = "icon" graphic={<MaterialIcon icon="device_hub"/>} />
-                          <ListItemText primaryText ="GitHub" />
+                          <ListItemText  className = "NavText" primaryText ="GitHub" />
                           </Link>
                           </ListItem>
             </List>

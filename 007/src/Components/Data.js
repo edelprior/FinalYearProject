@@ -9,21 +9,68 @@ class App extends Component {
     super(props);
 
     this.state = { tips: [
-                   {id: 1, title: 'Clarity',
-                           overview: "Clarity is also reffered to as Perceivability within an application. This is expecially important when it comes to Non - Text Content. This refers to images not containing text alternatives such as the following",
-                           link: "/codepen" },
-                   {id: 2, title: 'Color', overview: 'Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.Color can help communicate mood, tone, and critical information. Use color so that all users can understand the content is fundamental to accessible design. Choose primary, secondary, and accent colors for your app that support usability. Ensure sufficient color contrast between elements so that users with low vision can see and use your app.'},
-                   {id: 3, title: 'Contrast', overview: 'learn more'},
-                   {id: 4, title: 'Focus', overview: 'learn more'},
-                   {id: 5, title: 'Keyboard Use', overview: 'learn more'},
-                   {id: 6, title: 'Orientation', overview: 'learn more'},
-                   {id: 7, title: 'Readability', overview: 'learn more'},
-                   {id: 8, title: 'Structure', overview: 'learn more'},
-                   {id: 9, title: 'Typography', overview: 'learn more'},
-                   {id: 10, title: 'Testing', overview: 'learn more'},
-                 ],
-                   searchTerm: ''
-                 };
+                  { id: 1,
+                    title: "Clarity",
+                    overview: "Content that is straight forward and direct.",
+                    info: "Allow the widest number of users to perceive and understand the interface, enhancing their experience. Speak plainly when labelling button and pages, have components that not only make sense to the designers and developers of the project. Encourage 'Ease Of Use' by sticking to predictable navigation tools, obvious naming protocols and so on. Layouts should be intuitive for the user and not cause confusion.",
+                    summary:"Overall consistency, percision and understanding the user will make for a more accessible interface"
+                  },
+                  { id: 2,
+                    title: "Color",
+                    overview: "It is important not to depend on color in instances where the user cannot view the original interface. Color should not be the only tool used to communicate with the user. Color can help to convey information, such as red for danger, but should not be the only element used to do so. Ensuring decent knowledge of Color Theory is understood by the team producing the interface, suitable Primary, Secondary and Accent Colors should be decided upon and used throughout.",
+                    info: "Color is an integral part of the process within visualisation, but with functionality more should be achieved elsewhere to communicate with the user.",
+                    summary:''
+                  },
+                  { id: 3,
+                    title: 'Contrast',
+                    overview: 'learn more',
+                    info: '',
+                    summary:''
+                  },
+                  { id: 4,
+                    title: 'Focus',
+                    overview: 'learn more',
+                    info: '',
+                    summary:''
+                  },
+                  { id: 5,
+                    title: 'Keyboard Use',
+                    overview: 'learn more',
+                    info: '',
+                    summary:''
+                  },
+                  { id: 6,
+                    title: 'Orientation',
+                    overview: 'learn more',
+                    info: '',
+                    summary:''
+                  },
+                  { id: 7,
+                    title: 'Readability',
+                    overview: 'learn more',
+                    info: '',
+                    summary:''
+                  },
+                  { id: 8,
+                    title: 'Structure',
+                    overview: 'learn more',
+                    info: '',
+                    summary:''
+                  },
+                  { id: 9,
+                    title: 'Typography',
+                    overview: 'learn more',
+                    info: '',
+                    summary:''
+                  },
+                  { id: 10, title: 'Testing',
+                    overview: 'learn more',
+                    info: '',
+                    summary:''
+                  }
+                ],
+                searchTerm: ''
+               }
 
 
   this.handleChange = this.handleChange.bind(this);
@@ -55,12 +102,14 @@ class App extends Component {
 
       <Grid>
         <Row>
-        <Cell columns = {12}>
-        <TextField
-              trailingIcon={<MaterialIcon icon="search"/>}
+        <Cell  columns = {12}>
+
+      <TextField
+              className = "Search"
+              trailingIcon={<MaterialIcon className = "Searchicon" icon="search"/>}
               outlined={true}
             >
-            <Input
+         <Input
             className = "Search"
             type="text"
             name="searchTerm"
@@ -68,18 +117,14 @@ class App extends Component {
             value={this.state.searchTerm}
             onChange={this.handleChange}
             />
+
     </TextField>
+
       </Cell>
       </Row>
       <Row>
       <Cell>
       {tipNames}
-    {/*   { if (this.state.searchTerm) == '' {
-        return(
-           <Tips tips = {this.state.tips} key={this.state.id} show = {this.props.show}/>
-        );
-        else {tipNames} />
-      }} */}
           </Cell>
           </Row>
       </Grid>
