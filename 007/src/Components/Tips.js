@@ -25,13 +25,13 @@ import {Cell, Grid, Row} from '@material/react-layout-grid';
 class Tips extends Component {
 
   render() {
-      return this.props.tips.map((tip) => (
+    return(
       <Grid>
       <Row>
       <Cell className = "Referencelist" columns = {12}>
       <List>
-      <ListItem   onClick = {()=> this.props.show(tip)}> <Headline6>
-      {tip.title}</Headline6>
+      <ListItem   onClick = {()=> this.props.show(this.props.tip)}> <Headline6>
+      {this.props.title}</Headline6>
       <ListItemGraphic className = "iconOpen" graphic={<MaterialIcon icon="open_in_new"/>} />
 
       </ListItem>
@@ -39,10 +39,9 @@ class Tips extends Component {
       </Cell>
       </Row>
       </Grid>
-    ));
+    )}
   }
 
-}
 
 
 

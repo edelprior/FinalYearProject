@@ -8,7 +8,7 @@ import TopAppBar, {TopAppBarFixedAdjust} from '@material/react-top-app-bar';
 import Drawer, {DrawerAppContent, DrawerContent, DrawerHeader} from '@material/react-drawer';
 import MaterialIcon from '@material/react-material-icon';
 import List, {ListItem, ListItemGraphic, ListItemText} from '@material/react-list';
-import { Headline4, Headline6} from '@material/react-typography';
+import { Headline4} from '@material/react-typography';
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 // Importing Components that act as 'pages' within the Router-dom
 import Start from './Pages/Start';
