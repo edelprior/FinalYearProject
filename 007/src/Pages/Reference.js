@@ -7,7 +7,7 @@ import TipCard from '../Components/TipCard'
 
 import {Cell, Grid, Row} from '@material/react-layout-grid';
 // import Button from '@material/react-button';
-// import { Headline4 } from '@material/react-typography';
+// import { Headline3 } from '@material/react-typography';
 // import {TopAppBarFixedAdjust} from '@material/react-top-app-bar';
 
 import MaterialIcon from '@material/react-material-icon';
@@ -72,8 +72,8 @@ class Reference extends Component {
               <Row>
 
 
-        <Modal className = "modalTest" show={this.state.show} modalData = {this.state.modalData} handleClose={this.hide} >
-        </Modal>
+        <CardModal className = "modalTest" show={this.state.show} modalData = {this.state.modalData} handleClose={this.hide} >
+        </CardModal>
 
 
     </Row>
@@ -90,7 +90,7 @@ class Reference extends Component {
       is closed, and when open close icon
 */}
 
-const Modal = (props) => {
+const CardModal = (props) => {
   const showHideClassName = props.show ? 'modal display-block' : 'modal display-none';
 
   return (
@@ -104,6 +104,7 @@ const Modal = (props) => {
     </Grid>
   );
 };
+
 
 
 export default Reference;

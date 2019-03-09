@@ -6,7 +6,7 @@ import {Cell, Grid, Row} from '@material/react-layout-grid';
 import '../Styles/App.scss';
 
 // eslint-disable-next-line
-{/* Link to Stylesheet, React Library. Codepen NPM package and Grid..
+{/* Link to Stylesheet, React Library, i-Frame package and Grid..
 
     Whats Going in this Component?
 
