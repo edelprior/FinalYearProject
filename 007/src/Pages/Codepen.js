@@ -22,25 +22,73 @@ render() {
   return(
        <Grid>
        {/* - - - - - - - - - - - - - - - - - - - - - - - */}
-            <Row>
-              <Cell columns = {6}>
+          <Row>
+             <Cell columns = {6} className = "sandboxCard">
 
-                    <h1> Code Playground </h1>
-             </Cell>
-            </Row>
+
+                     <h1> Clarity </h1>
+                     <Iframe
+                             title = "Color"
+                              url="https://codesandbox.io/embed/00k1y3l50?fontsize=10"
+                              height = "400"
+                              width = "500"
+                     >  </Iframe>
+
+                     </Cell>
+                 </Row>
+                 <br/>
+                 <br/>
+       {/* - - - - - - - - - - - - - - - - - - - - - - - */}
+       <Row>
+          <Cell columns = {6} className = "sandboxCard">
+
+
+                  <h1> Color </h1>
+                  <Iframe
+                          title = "Color"
+                           url="https://codesandbox.io/embed/00k1y3l50?fontsize=10"
+                           height = "400"
+                           width = "500"
+                  >  </Iframe>
+
+                  </Cell>
+              </Row>
+              <br/>
+              <br/>
       {/* - - - - - - - - - - - - - - - - - - - - - - - */}
+      <Row>
+         <Cell columns = {6} className = "sandboxCard">
 
-            <Row>
-               <Cell columns = {10}>
-               <Iframe  url = "https://codesandbox.io/embed/p7nwyz7jkj?fontsize=14"
-                        height = "1000"
-                        sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin">
-               </Iframe>
 
-               </Cell>
-            </Row>
+                 <h1> Contrast </h1>
+                 <Iframe
+                         title = "Contrast"
+                         url="https://codesandbox.io/embed/vv0ppxj1l5?fontsize=10"
+                         height = "400"
+                         width = "500"
+                 >  </Iframe>
 
-      {/* - - - - - - - - - - - - - - - - - - - - - - - */}
+                 </Cell>
+             </Row>
+                <br />
+                <br />
+                {/* - - - - - - - - - - - - - - - - - - - - - - - */}
+                <Row>
+                   <Cell columns = {6} className = "sandboxCard">
+
+
+                           <h1> Focus Order </h1>
+                           <Iframe
+                                   title = "Color"
+                                    url="https://codesandbox.io/embed/00k1y3l50?fontsize=10"
+                                    height = "400"
+                                    width = "500"
+                           >  </Iframe>
+
+                           </Cell>
+                       </Row>
+                       <br/>
+                       <br/>
       </Grid>
   );
  }
