@@ -7,7 +7,7 @@ import TipCard from '../Components/TipCard'
 
 import {Cell, Grid, Row} from '@material/react-layout-grid';
 // import Button from '@material/react-button';
-// import { Headline3 } from '@material/react-typography';
+import { Headline3 } from '@material/react-typography';
 // import {TopAppBarFixedAdjust} from '@material/react-top-app-bar';
 
 import MaterialIcon from '@material/react-material-icon';
@@ -50,18 +50,11 @@ class Reference extends Component {
     return(
       <Grid>
         <Row>
-          <Cell>
-
+          <Cell className = "title">
+          <Headline3> Reference </Headline3>
 
   </Cell>
   </Row>
-
-
-  {/* }<Row>
-<Cell>
-  <Button dense className = "Alpha" onClick = {this.handleClick}><Headline3> A </Headline3></Button>
-</Cell>
-</Row> */}
 
 
 <Row>

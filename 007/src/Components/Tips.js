@@ -30,7 +30,7 @@ class Tips extends Component {
       <Row>
       <Cell className = "Referencelist" columns = {12}>
       <List>
-      <ListItem   onClick = {()=> this.props.show(this.props.tip)}> <Headline6>
+      <ListItem  className= "Referencelist" onClick = {()=> this.props.show(this.props.tip)}> <Headline6>
       {this.props.title}</Headline6>
       <ListItemGraphic className = "iconOpen" graphic={<MaterialIcon icon="open_in_new"/>} />
 

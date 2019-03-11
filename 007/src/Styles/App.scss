@@ -31,22 +31,38 @@
   overflow: scroll;
 }
 .drawer {
-  @include mdc-drawer-width(30%);
+  @include mdc-drawer-width(28%);
+  @include mdc-drawer-item-icon-ink-color($white);
   @include mdc-drawer-surface-fill-color($orange);
-  @include mdc-drawer-item-icon-ink-color(black);
+
 }
 .link {
     text-decoration: none;
-    color: black;
   }
 .icon {
-
   transform: scale(1.45);
-    color: black;
+
+}
+
+.title {
+  @include mdc-typography(headline3);
+  margin-left: 8%;
+}
+
+.menuicon {
+  margin-left: -10px;
+  transform: scale(1.2);
+}
+.logo {
+  margin-top: 25%;
+  margin-left: 40%;
+  margin-bottom: 10%;
+  transform: scale(6);
 }
 .TopAppBar{
     @include mdc-top-app-bar-fill-color($transparent);
     @include mdc-top-app-bar-icon-ink-color($blue);
+
   }
 
 .CardModal {
@@ -54,7 +70,20 @@
   width: 45%;
 
 }
+.button-alternate {
+  @include mdc-button-container-fill-color($blue);
+  width:80%;
+  margin-left: 40px;
+}
 
+.signupbutton {
+  @include mdc-button-outline-color($blue);
+  @include mdc-button-ink-color($blue);
+width:80%;
+  margin-left: 40px;
+
+
+}
 .Searchicon {
   transform: scale(1.25);
   color: $blue;
@@ -75,11 +104,10 @@
   @include mdc-text-field-label-color($blue);
   @include mdc-text-field-caret-color($blue);
 }
-
 .NavText {
   height: 100%;
-  @include mdc-list-item-primary-text-ink-color(black);
-    @include mdc-typography(headline6);
+    @include mdc-list-item-primary-text-ink-color(black);
+    @include mdc-typography(headline5);
 }
 
 .typeContentCard {
@@ -99,10 +127,12 @@ position: center;
 .sandboxCard {
   height: 500px;
 }
-
+.Referencelist{
+  height: 80px;
+}
 
 .iconOpen {
-  color: black;
+  color: $orange;
   margin-left: 30px;
   }
 

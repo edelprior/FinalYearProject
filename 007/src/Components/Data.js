@@ -40,33 +40,28 @@ class App extends Component {
                     summary:'Without Language definition in the code of the product, many users would be hindered.'
                   },
                   { id: 6,
-                    title: 'Orientation',
-                    overview: 'learn more',
-                    info: '',
-                    summary:''
+                    title: 'Keyboard Accessibility',
+                    overview: 'Ensure your content is reachable through a keyboard.',
+                    info: 'Keyboards and Keyboard Interfaces are possibly the most often adapted pieces of hardware when developing an accessible product. Theyy help people who are blind, have low vision and those who have tremors and struggle with mouse input. The simplest of components within an application must be accessible, for instance form control. These users must use the keyboard to navigate through the page, independent of the mouse.',
+                    summary:'Allowing movement via a keyboard through an interface benefits many users.'
                   },
                   { id: 7,
-                    title: 'Readability',
-                    overview: 'learn more',
-                    info: '',
-                    summary:''
+                    title: 'User Interface Controls',
+                    overview: 'Provide appropriate labelling and description of each elemnent.',
+                    info: 'From creating alternative text links for images, to labelling each element withing the page appropriately, giving the user control over the application by defining each component is very important. Providing a role, state and value for each piece enables compatibility with assistive technoloy and allows for an overall more accessible experience. Using aria labels that can be hidden but provide context for those using assistive tech is good practice.',
+                    summary:'Giving context to the user, whatever their abilities encourages a better understanding from the application.'
                   },
+
                   { id: 8,
-                    title: 'Structure',
-                    overview: 'learn more',
-                    info: '',
-                    summary:''
+                    title: 'Scalable Typography',
+                    overview: 'Establish a  set of principles for sizing text, to allow alterations when neccessary',
+                    info: 'Scaling content on  a screen is one of the first customizations done by many assistive technologies. Many people with vision impairments simply have to increase the text size for an enhanced experience. A well designed product will have wholly scalable components, aswell as text content, that will change the layout to suit the text size. Defining these components as an overall percentage of the screen, or an EMS, allows third party technologies to modify the interface.',
+                    summary:'It is deemed that 200% is a reasonable scale for users to determine their preffered text size.'
                   },
-                  { id: 9,
-                    title: 'Typography',
-                    overview: 'learn more',
-                    info: '',
-                    summary:''
-                  },
-                  { id: 10, title: 'Testing',
-                    overview: 'learn more',
-                    info: '',
-                    summary:''
+                  { id: 9, title: 'Testing',
+                    overview: 'Iterative Design and Development ensures an accessible product.',
+                    info: 'Communication with the users of the application, and a constant testing and adaptation will allow the design to reach its full potential, aiding the largest group of people possible. Testing from beginning to end, with assistive technologies turned on will help the process. As well as user testing with people who are impaired. Encourage the most fundamental components within the app are accessible. Learn about users needs, and try to design something that helps them.',
+                    summary:'Empathy and Communication will aid everyone involved in the develpment of the inteface, including the final user.'
                   }
                 ],
                 searchTerm: ''

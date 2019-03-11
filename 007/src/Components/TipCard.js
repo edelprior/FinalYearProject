@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../Pages/Codepen';
+import '../Pages/Examples';
 import '../Styles/App.scss';
 
 // - - - - - - - - - - - - - - - - - - - - - //
@@ -9,7 +9,7 @@ import Card, {
   CardActions,
   CardActionIcons
 } from "@material/react-card";
-import { Headline3, Body1, Body2} from '@material/react-typography';
+import { Headline3, Headline5, Body1, Body2} from '@material/react-typography';
 import {Cell} from '@material/react-layout-grid';
 import MaterialIcon from '@material/react-material-icon';
 
@@ -34,13 +34,13 @@ class TipCard extends Component {
           <Cell columns = {12}>
            {/* - - - - */}
 
-              <Card className="typeContentCard" outlined>
+              <Card className="typeContentCard">
               <CardPrimaryContent className = "typeContentCard">
                 <Headline3>
                   {this.props.modalData.title}
                 </Headline3>
 
-                  <Body1>{this.props.modalData.overview} </Body1>
+                  <Headline5>{this.props.modalData.overview} </Headline5>
                   <Body2> {this.props.modalData.info}  </Body2>
                   <Body1> {this.props.modalData.summary} </Body1>
 

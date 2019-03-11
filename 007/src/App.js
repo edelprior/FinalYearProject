@@ -13,9 +13,8 @@ import { Headline3} from '@material/react-typography';
 // Importing Components that act as 'pages' within the Router-dom
 import Start from './Pages/Start';
 import Reference from './Pages/Reference';
-import CodePen from './Pages/Codepen';
 import Examples from './Pages/Examples';
-import Learn from './Pages/Learn';
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 
 // eslint-disable-next-line
@@ -53,16 +52,21 @@ class App extends Component {
         >
          <DrawerContent>
            <DrawerHeader>
-             <Headline3>
-              Accessibilty Design Handbook</Headline3>
+           <Link className = "link" to="/">
+           <ListItemGraphic className="logo" link = "/" graphic = {<MaterialIcon icon="accessibility"/>}>
+           </ListItemGraphic>
+           </Link>
+           <Headline3>
+              Accessibilty Design Handbook
+           </Headline3>
 
            </DrawerHeader>
               {/* - - - - - - - - - - */}
-           <List>
+           <List className = "NavList">
               <ListItem>
                   <Link className = "link" to="/">
                       <ListItemGraphic className = "icon" graphic={<MaterialIcon icon="home"/>} />
-                      <ListItemText className = "NavText" primaryText="Start" />
+                      <ListItemText className = "NavText" primaryText="Home" />
                   </Link>
               </ListItem>
 
@@ -79,37 +83,16 @@ class App extends Component {
 
               {/* * * * */}
 
-              <ListItem>
-                   <Link className = "link" to="/codepen">
-                         <ListItemGraphic className = "icon" graphic={<MaterialIcon icon="code"/>} />
-
-                       <ListItemText className = "NavText" primaryText="Code Playground" />
-                   </Link>
-              </ListItem>
-
-              {/* * * * */}
-
                 <ListItem>
                   <Link className = "link" to="/examples">
-                  <ListItemGraphic className = "icon" graphic={<MaterialIcon icon="search"/>} />
+                  <ListItemGraphic className = "icon" graphic={<MaterialIcon icon="code"/>} />
                   <ListItemText className = "NavText" primaryText ="Examples" />
                   </Link>
                   </ListItem>
-
-
-                  {/* * * * */}
-
-                    <ListItem>
-                      <Link className = "link" to="/learn">
-                      <ListItemGraphic className = "icon" graphic={<MaterialIcon icon="school"/>} />
-                      <ListItemText className = "NavText" primaryText ="Learn" />
-                      </Link>
-                      </ListItem>
-
                       {/* * * * */}
 
                         <ListItem>
-                          <Link className = "link" to="www.github.com/edelprior">
+                          <Link className = "link" to="/github">
                           <ListItemGraphic className = "icon" graphic={<MaterialIcon icon="device_hub"/>} />
                           <ListItemText  className = "NavText" primaryText ="GitHub" />
                           </Link>
@@ -123,23 +106,28 @@ class App extends Component {
         <DrawerAppContent className="drawer-app-content">
             <TopAppBar className = "TopAppBar"
               navigationIcon={
-                <MaterialIcon icon="menu"onClick={() =>
+                <MaterialIcon className  = "menuicon" icon="menu"onClick={() =>
                  this.setState({open: !this.state.open})}>
-                 {this.state.open ? <MaterialIcon icon = "close"/>
-                                  : <MaterialIcon icon = "menu" />
-                                }
+
                                 </MaterialIcon>
             }
-            />
+        >
+
+
+
+          </TopAppBar>
             {/* Trying to get the Material Icon button to be Menu when the drawer is closed, and when open close icon */ }
 
             <TopAppBarFixedAdjust>
+
                       <Route exact path  = "/" component={Start}/>
                       <Route path = "/reference" component={Reference}/>
-                      <Route path = "/codepen" component = {CodePen}/>
-                        <Route path = "/examples" component = {Examples}/>
-                          <Route path = "/learn" component = {Learn}/>
-                          </TopAppBarFixedAdjust>
+                      <Route path = "/examples" component = {Examples}/>
+                      <Route path='/github' component={() => {
+                       window.location = 'https://github.com/edelprior/finalyearproject';
+                       return null;} }/>
+                      </TopAppBarFixedAdjust>
+
 
             {/* Path so the Router knows which component to show */ }
           </DrawerAppContent>
